@@ -106,7 +106,7 @@ body {
     transition: transform 0.2s ease;
 }
 
-.settings:hover .menu {
+.settings.show .menu {
     transform: scale(1);
 }
 
@@ -148,6 +148,17 @@ body {
     border-radius: 5px;
     justify-content: center;
     transform: translate(-50%, -50%);
+}
+
+.popup-box, .popup-box .popup {
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.25s ease;
+}
+
+.popup-box.show, .popup-box .popup {
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .popup .content {
@@ -199,6 +210,7 @@ form .row label {
 .content form textarea {
     height: 150px;
     resize: none;
+    padding: 8px 15px;
 }
 
 .content form  button {
